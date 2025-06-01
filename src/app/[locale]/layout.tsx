@@ -56,6 +56,10 @@ import ConsoleMessage from '@/app/ConsoleMessage';
 // Navigation Bar
 import MainNavbar from "@/components/navbar/MainNavbar";
 
+// Footer
+import Footer from "@/components/footer/footer";
+
+// Metadata
 export const metadata: Metadata = {
   title: "GDG on Campus MUST",
   description: "This is a website for GDG on Campus at Mongolian University of Science and Technology",
@@ -76,13 +80,25 @@ export default async function LocaleLayout({
  
   return (
     <html lang={locale} className={`${googleSans.variable} ${manrope.variable}`}>
-      <body>
+      <body className="flex flex-col min-h-screen">
         <NextIntlClientProvider>
+          
+          {/* Main navigation bar */}
           <nav className="absolute left-0 right-0 pointer-events-none">
             <MainNavbar />
           </nav>
+
+          {/* console fun message */}
           <ConsoleMessage />
+
+          {/* main content */}
           {children}
+          
+          {/* footer */}
+          <footer className="mt-auto">
+            <Footer />
+          </footer>
+
         </NextIntlClientProvider>
       </body>
     </html>

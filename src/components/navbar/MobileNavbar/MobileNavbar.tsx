@@ -22,7 +22,6 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
   const locale = useLocale();
   const navItems = useNavItems();
 
-
   // Extract the locale from the current pathname
   const currentLocale = pathname.split("/")[1];
 
@@ -30,21 +29,19 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
   const switchLocale = (newLocale: string) => {
     const newPath = `/${newLocale}${pathname.replace(`/${currentLocale}`, "")}`;
     router.push(newPath);
-    setIsMenuOpen(false); // Fixed: was setIsOpen
+    setIsMenuOpen(false);
   };
   
   const handleNavigation = (anchor: string) => {
-    setIsMenuOpen(false); // Fixed: was setIsOpen
+    setIsMenuOpen(false);
     
     if (anchor.startsWith('#')) {
-      // Handle hash/anchor links
       if (anchor === '#') {
         router.push(`/${locale}`);
       } else {
         router.push(`/${locale}${anchor}`);
       }
     } else if (anchor.startsWith('/')) {
-      // Handle regular page navigation
       router.push(`/${locale}${anchor}`);
     }
   };
@@ -60,9 +57,13 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
     }
   };
 
-  // Get the "Other" subitems
-  const otherSubItems = navItems.find((n) => n.label === "Other")?.subItems || [];
+  // Get the "Other" subitems BEFORE filtering
+  const otherItem = navItems.find((n) => n.label.toLowerCase().includes('other') || n.label === 'Бусад');
+  const otherSubItems = otherItem?.subItems || [];
 
+  // Filter out items with no anchor (like "Other") and get their subitems
+  const mainNavItems = navItems.filter(item => item.anchor !== '');
+  
   // Animation variants
   const menuVariants = {
     hidden: { opacity: 0, y: 20, scale: 0.95 },
@@ -130,46 +131,42 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
               exit="exit"
             >
               <ul className="space-y-4 text-center select-none">
-                {/* Show all items except "Other" */}
-                {navItems
-                  .filter(item => item.label !== "Other")
-                  .map((item, i) => (
-                    <motion.li 
-                      key={item.label}
-                      custom={i}
-                      variants={itemVariants}
-                      initial="hidden"
-                      animate="visible"
+                {/* Show main navigation items (those with anchors) */}
+                {mainNavItems.map((item, i) => (
+                  <motion.li 
+                    key={item.label}
+                    custom={i}
+                    variants={itemVariants}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    <motion.button 
+                      onClick={() => handleNavigation(item.anchor)}
+                      className={`w-full py-2 px-4 rounded-lg transition-colors ${
+                        isActive(item.anchor) ? 'bg-black/5 font-bold' : 'font-regular'
+                      }`}
+                      whileHover={{ 
+                        backgroundColor: "rgba(0,0,0,0.06)", 
+                        scale: 1.02 
+                      }}
+                      whileTap={{ scale: 0.98 }}
                     >
-                      <motion.button 
-                        onClick={() => handleNavigation(item.anchor)}
-                        // id={`${isActive(item.anchor) ? 'font-gbold' : 'font-g-regular'}`}
-                        className={`w-full py-2 px-4 rounded-lg transition-colors ${
-                          isActive(item.anchor) ? 'bg-black/5 font-bold' : 'font-regular'
-                        }`}
-                        whileHover={{ 
-                          backgroundColor: "rgba(0,0,0,0.06)", 
-                          scale: 1.02 
-                        }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        {item.label}
-                      </motion.button>
-                    </motion.li>
+                      {item.label}
+                    </motion.button>
+                  </motion.li>
                 ))}
                 
                 {/* Show "Other" subitems directly */}
                 {otherSubItems.map((sub, i) => (
                   <motion.li 
                     key={sub.label}
-                    custom={i + navItems.filter(item => item.label !== "Other").length}
+                    custom={i + mainNavItems.length}
                     variants={itemVariants}
                     initial="hidden"
                     animate="visible"
                   >
                     <motion.button 
                       onClick={() => handleNavigation(sub.anchor)}
-                      
                       className={`w-full py-2 px-4 rounded-lg transition-colors select-none ${
                         isActive(sub.anchor) ? 'bg-black/5 font-bold' : 'font-regular'
                       }`}
@@ -187,7 +184,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
                 {/* Language Toggle Section */}
                 <motion.li 
                   className="pt-2"
-                  custom={navItems.length + otherSubItems.length}
+                  custom={mainNavItems.length + otherSubItems.length}
                   variants={itemVariants}
                   initial="hidden"
                   animate="visible"
@@ -240,12 +237,12 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
       )}
     </AnimatePresence>
     {/* Navigation bar with menu button */}
-    <nav className="bg-white/95 backdrop-blur-md outline-none outline-1 outline-black/60 flex justify-center items-center outline-offset-0 rounded-full p-4 fixed bottom-[20px] left-1/2 transform -translate-x-1/2 w-[100px] h-[40px] select-none z-50">
+    <nav className="bg-white/95 backdrop-blur-md outline-none outline-1 outline-black/60 flex justify-center items-center outline-offset-0 rounded-full p-4 fixed bottom-[20px] left-1/2 transform -translate-x-1/2 w-[100px] h-[40px] select-none z-50 pointer-events-auto">
     <button
-      onClick={() => setIsMenuOpen(!isMenuOpen)} // Fixed: was setIsOpen(!isOpen)
+      onClick={() => setIsMenuOpen(!isMenuOpen)}
       className="px-7 py-5 rounded text-black font-bold"
     >
-      {isMenuOpen ? "CLOSE" : "MENU"} {/* Fixed: was isOpen */}
+      {isMenuOpen ? "CLOSE" : "MENU"}
     </button>
     </nav>
   </>
