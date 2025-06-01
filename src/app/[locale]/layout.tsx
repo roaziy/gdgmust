@@ -50,9 +50,6 @@ const manrope = Manrope({
 // Console message for fun
 import ConsoleMessage from '@/app/ConsoleMessage';
 
-// 404 page
-// import {notFound} from 'next/navigation';
-
 // Navigation Bar
 import MainNavbar from "@/components/navbar/MainNavbar";
 

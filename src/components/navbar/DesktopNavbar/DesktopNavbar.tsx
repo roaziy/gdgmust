@@ -57,22 +57,34 @@ export default function Navbar() {
         };
     }, [locale, pathname, navItems]);
 
-    // ✅ Determine selected tab from current URL
     useEffect(() => {
         if (widths.length === 0 || positions.length === 0 || !pathname) return;
 
         const currentPath = pathname.replace(`/${locale}`, '').toLowerCase();
         let matchedIndex: number | null = null;
 
-        navItems.forEach((item, index) => {
-            const main = item.anchor?.toLowerCase() || '';
-            const subAnchors = item.subItems?.map(sub => sub.anchor?.toLowerCase()) || [];
+        // ✅ Explicitly match Home ("/" or "")
+        if (currentPath === '' || currentPath === '/') {
+            matchedIndex = 0; // Home
+        } else {
+            for (let i = 0; i < navItems.length; i++) {
+                const main = navItems[i].anchor?.toLowerCase() || '';
+                const subAnchors = navItems[i].subItems?.map(sub => sub.anchor?.toLowerCase()) || [];
 
-            if (main && currentPath.startsWith(main)) matchedIndex = index;
-            if (subAnchors.some(anchor => currentPath.startsWith(anchor))) matchedIndex = index;
-        });
+                if (main && main !== '/' && currentPath.startsWith(main)) {
+                    matchedIndex = i;
+                    break;
+                }
 
-        setSelected(matchedIndex !== null ? matchedIndex : 0);
+                if (subAnchors.some(anchor => anchor && currentPath.startsWith(anchor))) {
+                    matchedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // ✅ Default fallback to "Other" (assumed index 4)
+        setSelected(matchedIndex !== null ? matchedIndex : 4);
     }, [pathname, locale, widths, positions]);
 
     const handleMouseEnter = (index: number) => {
