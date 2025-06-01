@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  /* --foreground: #171717; */
+}
+
+/* Default body font based on locale */
+html[lang="en"] body {
+  font-family: 'GoogleSans', 'manrope', sans-serif;
+}
+
+html[lang="mn"] body {
+  font-family: 'GoogleSans', 'manrope', sans-serif;
+}

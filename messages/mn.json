@@ -1,0 +1,14 @@
+{
+  "Navigation": {
+    "home": "Нүүр",
+    "about": "Тухай",
+    "community": "Хамт Олон",
+    "events": "Эвентүүд",
+    "other": "Бусад",
+    "contact": "Холбоо барих"
+  },
+  "HomePage": {
+    "title": "Сайн уу?",
+    "about": "Тухай хуудас руу очих Google"
+  }
+}
