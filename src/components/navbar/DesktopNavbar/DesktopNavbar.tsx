@@ -112,8 +112,8 @@ export default function Navbar() {
                         className="absolute rounded-full bg-[#dadada] z-[1]"
                         initial={false}
                         animate={{
-                            left: positions[selected],
-                            width: widths[selected]
+                            left: positions[selected] - 4,
+                            width: widths[selected] + 8
                         }}
                         transition={{ type: 'tween', duration: 0.35, ease: [0.33, 1, 0.68, 1] }}
                         style={{ height: '40px' }}
