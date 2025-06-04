@@ -1,49 +1,74 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedinIn, FaDiscord } from "react-icons/fa";
-import "@/styles/globals.css";
-
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedinIn,
+  FaDiscord,
+  FaYoutube,
+} from "react-icons/fa";
 import Image from "next/image";
-import pixelHeart from "../../../public/images/footer/pixelHeart.png";
-
-const currentYear: number = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <div draggable="false" className="w-full flex flex-col items-center pt-[69px] pb-[100px] lg:pb-[78px] md:pb-[100px] sm:pb-[100px] px-5 md:px-10 bg-[#F6F6F6] select-none">
-      <div className="w-full max-w-[1300px] flex flex-col lg:flex-row justify-between items-center text-center lg:text-left">
-        {/* Left Section */}
-        <div className="text-black text-lg md:text-xl lg:text-[20px] font-medium max-w-[314px]">
-          <p className="leading-[1.24]" draggable="false" id="">
-            Google Developer Groups (GDG) on Campus at Mongolian University of Science and Technology
-          </p>
+    <footer className="relative bg-[#242424] bg-opacity-80 backdrop-blur-md pt-32 pb-20 px-6 md:px-20 text-white overflow-hidden">
+      {/* White decorative topper */}
+      <div className="absolute top-0 left-0 w-full h-10 bg-white rounded-b-full z-0" />
+
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+        {/* Logo and Contact */}
+        <div className="flex flex-col gap-4">
+          <Image
+            src="/logos/full-white.png"
+            alt="GDG on Campus MUST Logo"
+            width={220}
+            height={60}
+            className="mb-2"
+          />
+          <div>
+            <h2 className="text-xl font-semibold mb-1">Say Hello!</h2>
+            <p className="text-[16px]">hello@gdgmust.dev</p>
+            <p className="text-[16px]">gdgmust@gmail.com</p>
+          </div>
         </div>
 
-        {/* Right Section */}
-        <div className="flex flex-col items-center lg:items-end mt-8 lg:mt-0" draggable="false">
-          <div className="flex space-x-4 text-[23px]" draggable="false">
-            <a href="https://www.facebook.com/gdgcmust/" target="_blank" rel="noopener noreferrer" draggable="false">
-              <FaFacebook className="lg:hover:text-gray-500 md:hover:text-gray-500 select-none" />
-            </a>
-            <a href="https://www.instagram.com/gdg.must/" target="_blank" rel="noopener noreferrer" draggable="false">
-              <FaInstagram className="text-[24px] lg:hover:text-gray-500 md:hover:text-gray-500 select-none" />
-            </a>
-            <a href="https://www.linkedin.com/company/gdgmust/" target="_blank" rel="noopener noreferrer" draggable="false">
-              <FaLinkedinIn className=" lg:hover:text-gray-500 md:hover:text-gray-500 text-[24px] select-none mt-[1px]" />
-            </a>
-            <a href="https://discord.gg/YNyzd5D9" target="_blank" rel="noopener noreferrer" draggable="false">
-              <FaDiscord  className=" lg:hover:text-gray-500 md:hover:text-gray-500 text-[27px] -mt-[1px] select-none" />
-            </a>
-          </div>
-          <div className="mt-6 lg:mt-0 md:mt-6 sm:mt-6 text-center lg:text-right" draggable="false">
-            <p className="text-[19px] mt-2">Ulaanbaatar, Mongolia</p>
-            <p className="text-[15px] -mt-[6px] flex items-center justify-end">
-              Made with <Image src={pixelHeart} alt="Pixel Heart" width={15} height={15} draggable="false" className="mx-1 select-none" /> in UB © {currentYear}
+        {/* Address & Interaction */}
+        <div className="flex flex-col gap-6">
+          <div>
+            <h2 className="text-xl font-semibold mb-2">Location</h2>
+            <p className="text-base opacity-80">
+              Улаанбаатар 13341<br />
+              БЗД, 22-р хороо<br />
+              Мэдээлэл, Холбооны Технологийн Сургууль<br />
+              +976 8824 5988
             </p>
-            <p className="text-[14px] -mt-[6.5px]">Developed by <a href="https://www.instagram.com/roaziy/" target="_blank" rel="noopener noreferrer" draggable="false"><span className="font-bold select-none" >roaziy</span></a></p>
           </div>
         </div>
+
+        {/* Buttons */}
+        <div className="flex flex-col gap-6">
+          <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-xl px-6 py-3 shadow-lg w-[200px]">
+            Contact
+          </button>
+          <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-xl px-6 py-3 shadow-lg w-[200px]">
+            Policy
+          </button>
+        </div>
       </div>
-    </div>
+
+      {/* Social Icons */}
+      <div className="relative z-10 flex justify-center gap-8 mt-16 text-xl text-gray-400">
+        <FaFacebook className="hover:text-white transition cursor-pointer" />
+        <FaInstagram className="hover:text-white transition cursor-pointer" />
+        <FaLinkedinIn className="hover:text-white transition cursor-pointer" />
+        <FaDiscord className="hover:text-white transition cursor-pointer" />
+        <FaYoutube className="hover:text-white transition cursor-pointer" />
+      </div>
+
+      {/* Copyright */}
+      <p className="relative z-10 mt-12 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} GDG on Campus MUST. Бүх эрх хуулиар хамгаалагдсан.
+      </p>
+    </footer>
   );
 };
 
