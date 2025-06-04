@@ -17,13 +17,15 @@ const Footer = () => {
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
         {/* Logo and Contact */}
         <div className="flex flex-col gap-4">
-          <Image
-            src="/logos/full-white.png"
-            alt="GDG on Campus MUST Logo"
-            width={220}
-            height={60}
-            className="mb-2"
-          />
+          <div className="relative w-[220px] h-[30px]">
+            <Image
+              src="/logos/full-white.png"
+              alt="GDG on Campus MUST Logo"
+              fill
+              sizes="(max-width: 768px) 150px, (max-width: 1200px) 200px, 220px"
+              style={{ objectFit: "contain" }}
+            />
+          </div>
           <div>
             <h2 className="text-xl font-semibold mb-1">Say Hello!</h2>
             <p className="text-[16px]">hello@gdgmust.dev</p>
