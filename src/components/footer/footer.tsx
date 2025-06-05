@@ -8,7 +8,13 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 
+// i18n language
+import { useTranslations } from "next-intl";
+
 const Footer = () => {
+  // language i18n
+  const t = useTranslations("Footer");
+
   return (
     <footer className="relative bg-[#242424] bg-opacity-80 backdrop-blur-md pt-32 pb-20 px-6 md:px-20 text-white overflow-hidden">
       {/* White decorative topper */}
@@ -28,16 +34,20 @@ const Footer = () => {
             />
           </div>
           <div>
-            <h2 className="text-xl font-semibold mb-1">Say Hello!</h2>
-            <p className="text-[16px]">hello@gdgmust.dev</p>
-            <p className="text-[16px]">gdgmust@gmail.com</p>
+            <h2 className="text-xl font-semibold mb-1 select-none">{t('sayHello')}</h2>
+            <p className="text-[16px]">
+              <a href="mailto:hello@gdgmust.dev" className="hover:underline">hello@gdgmust.dev</a>
+            </p>
+            <p className="text-[16px]">
+              <a href="mailto:gdgmust@gmail.com" className="hover:underline">gdgmust@gmail.com</a>
+            </p>
           </div>
         </div>
 
         {/* Address & Interaction */}
         <div className="flex flex-col gap-6">
           <div>
-            <h2 className="text-xl font-semibold mb-2">Location</h2>
+            <h2 className="text-xl font-semibold mb-2 select-none">Location</h2>
             <p className="text-base opacity-80">
               Улаанбаатар 13341<br />
               БЗД, 22-р хороо<br />
@@ -79,7 +89,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <p className="relative z-10 mt-12 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} GDG on Campus MUST. Бүх эрх хуулиар хамгаалагдсан.
+        {t("copyright1")} <a href="https://www.instagram.com/roaziy/" className="text-white hover:underline px-[2px]">roaziy</a> {t("copyright2")} {new Date().getFullYear()} 
       </p>
     </footer>
   );

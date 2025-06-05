@@ -10,5 +10,10 @@
   "HomePage": {
     "title": "Сайн уу?",
     "about": "Тухай хуудас руу очих Google"
+  },
+  "Footer": {
+    "sayHello": "Say Hello!",
+    "copyright1": "",
+    "copyright2": "❤️ сэтгэлээ гаргаж хийв • UB • © "
   }
 }

@@ -10,5 +10,10 @@
   "HomePage": {
     "title": "Hello world!",
     "about": "Go to the about page    Сайн уу? Тухай хуудас руу очих"
+  },
+  "Footer": {
+    "sayHello": "Say Hello!",
+    "copyright1": "Made with ❤️ by",
+    "copyright2": "in UB © "
   }
 }
