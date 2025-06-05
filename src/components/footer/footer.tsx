@@ -88,8 +88,8 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <p className="relative z-10 mt-12 text-center text-sm text-gray-500">
-        {t("copyright1")} <a href="https://www.instagram.com/roaziy/" className="text-white hover:underline px-[2px]">roaziy</a> {t("copyright2")} {new Date().getFullYear()} 
+      <p className="relative z-10 mt-12 text-center text-sm text-gray-500 select-none" draggable="false">
+        {t("copyright1")} <a href="https://www.instagram.com/roaziy/" className="text-white hover:underline px-[2px]" draggable="false">roaziy</a> {t("copyright2")} {new Date().getFullYear()} 
       </p>
     </footer>
   );

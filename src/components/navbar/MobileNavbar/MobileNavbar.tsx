@@ -26,9 +26,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Get current locale from params (consistent with desktop)
-  const currentLocale = params.locale as string;
-
-  // Function to switch locale with smooth transition
+  const currentLocale = params.locale as string;  // Function to switch locale with smooth transition
   const switchLocale = (newLocale: string) => {
     if (currentLocale === newLocale || isTransitioning) return;
     
@@ -43,30 +41,20 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
     }, 600); // Match the transition duration
     
     setIsMenuOpen(false);
-  };
-  
-  const handleNavigation = (anchor: string) => {
+  };  const handleNavigation = (anchor: string) => {
     setIsMenuOpen(false);
     
-    if (anchor.startsWith('#')) {
-      if (anchor === '#') {
-        router.push(`/${locale}`);
-      } else {
-        router.push(`/${locale}${anchor}`);
-      }
-    } else if (anchor.startsWith('/')) {
-      router.push(`/${locale}${anchor}`);
-    }
-  };
-
-  // Function to check if a menu item is active
+    if (!anchor) return;
+    // Use the next-intl router with just the anchor (without locale)
+    router.replace(anchor);
+  };  // Function to check if a menu item is active
   const isActive = (anchor: string) => {
+    const currentPath = pathname.replace(`/${locale}`, '').toLowerCase();
+    
     if (anchor === '/') {
-      return pathname === `/${locale}` || pathname === `/${locale}/`;
-    } else if (anchor.startsWith('#')) {
-      return pathname === `/${locale}` || pathname === `/${locale}/`;
+      return currentPath === '' || currentPath === '/';
     } else {
-      return pathname === `/${locale}${anchor}`;
+      return currentPath.startsWith(anchor.toLowerCase());
     }
   };
 
