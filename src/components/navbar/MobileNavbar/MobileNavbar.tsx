@@ -2,8 +2,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavItems } from "../navItems";
 import "@/styles/globals.css";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import mn from "../../../../public/images/Lang/mn.png";
@@ -20,15 +21,27 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
   const router = useRouter();
   const pathname = usePathname();
   const locale = useLocale();
+  const params = useParams();
   const navItems = useNavItems();
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Extract the locale from the current pathname
-  const currentLocale = pathname.split("/")[1];
+  // Get current locale from params (consistent with desktop)
+  const currentLocale = params.locale as string;
 
-  // Function to switch locale
+  // Function to switch locale with smooth transition
   const switchLocale = (newLocale: string) => {
-    const newPath = `/${newLocale}${pathname.replace(`/${currentLocale}`, "")}`;
-    router.push(newPath);
+    if (currentLocale === newLocale || isTransitioning) return;
+    
+    setIsTransitioning(true);
+    
+    // Use the next-intl router for proper locale switching
+    router.replace(pathname, { locale: newLocale });
+    
+    // Reset transitioning state after animation
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 600); // Match the transition duration
+    
     setIsMenuOpen(false);
   };
   
@@ -188,14 +201,15 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
                   variants={itemVariants}
                   initial="hidden"
                   animate="visible"
-                >
-                  <div className="border-t border-gray-200 pt-4 flex justify-center">
+                >                  <div className="border-t border-gray-200 pt-4 flex justify-center">
                     <div className="flex items-center justify-between gap-4 select-none">
                       <motion.button
                         onClick={() => switchLocale("mn")}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
+                        disabled={isTransitioning || currentLocale === "mn"}
+                        whileHover={{ scale: isTransitioning ? 1 : 1.1 }}
+                        whileTap={{ scale: isTransitioning ? 1 : 0.95 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        className="transition-transform duration-300 ease-in-out"
                       >
                         <Image
                           src={mn}
@@ -205,7 +219,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
                           draggable="false"
                           className={`rounded-full transition-all duration-300 ${
                             currentLocale === "mn" ? "saturate-100 scale-110" : "saturate-[0%] scale-[70%] opacity-[70%]"
-                          }`}
+                          } ${isTransitioning ? "opacity-50" : ""}`}
                         />
                       </motion.button>
                       
@@ -213,10 +227,11 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
                       
                       <motion.button
                         onClick={() => switchLocale("en")}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.95 }}
+                        disabled={isTransitioning || currentLocale === "en"}
+                        whileHover={{ scale: isTransitioning ? 1 : 1.1 }}
+                        whileTap={{ scale: isTransitioning ? 1 : 0.95 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                      >
+                        className="transition-transform duration-300 ease-in-out"                      >
                         <Image
                           src={en}
                           alt="US Flag"
@@ -225,7 +240,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
                           draggable="false"
                           className={`rounded-full transition-all duration-300 ${
                             currentLocale === "en" ? "saturate-100 scale-110" : "saturate-[0%] scale-[70%] opacity-[70%]"
-                          }`}
+                          } ${isTransitioning ? "opacity-50" : ""}`}
                         />
                       </motion.button>
                     </div>

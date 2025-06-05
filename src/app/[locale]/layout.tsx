@@ -81,7 +81,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           
           {/* Main navigation bar */}
-          <nav className="fixed left-0 right-0 pointer-events-none">
+          <nav className="z-30 fixed left-0 right-0 pointer-events-none">
             <MainNavbar />
           </nav>
 
