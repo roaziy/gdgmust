@@ -13,6 +13,12 @@
   },
   "Footer": {
     "sayHello": "Say Hello!",
+    "location": {
+      "location": "Байршил",
+      "city": "Улаанбаатар, 13341",
+      "address": "БЗД, 22-р хороо",
+      "school": "Мэдээлэл, Холбооны Технологийн Сургууль"
+    },
     "copyright1": "",
     "copyright2": "❤️ сэтгэлээ гаргаж хийв • UB • © "
   }

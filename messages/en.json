@@ -13,6 +13,12 @@
   },
   "Footer": {
     "sayHello": "Say Hello!",
+    "location": {
+      "location": "Location",
+      "city": "Ulaanbaatar, 13341",
+      "address": "BZD, 22th khoroo",
+      "school": "School of Information and Telecommunication Technology"
+    },
     "copyright1": "Made with ❤️ by",
     "copyright2": "in UB © "
   }

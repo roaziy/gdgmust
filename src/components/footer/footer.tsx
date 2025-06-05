@@ -16,7 +16,7 @@ const Footer = () => {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="relative bg-[#242424] bg-opacity-80 backdrop-blur-md pt-32 pb-20 px-6 md:px-20 text-white overflow-hidden">
+    <footer className="relative bg-[#242424] bg-opacity-80 backdrop-blur-md pt-32 pb-30 md:pb-24 px-6 md:px-20 text-white overflow-hidden">
       {/* White decorative topper */}
       <div className="absolute top-0 left-0 w-full h-10 bg-white rounded-b-full z-0" />
 
@@ -35,24 +35,24 @@ const Footer = () => {
           </div>
           <div>
             <h2 className="text-xl font-semibold mb-1 select-none">{t('sayHello')}</h2>
-            <p className="text-[16px]">
+            <li className="text-[16px]">
               <a href="mailto:hello@gdgmust.dev" className="hover:underline">hello@gdgmust.dev</a>
-            </p>
-            <p className="text-[16px]">
+            </li>
+            <li className="text-[16px]">
               <a href="mailto:gdgmust@gmail.com" className="hover:underline">gdgmust@gmail.com</a>
-            </p>
+            </li>
           </div>
         </div>
 
         {/* Address & Interaction */}
         <div className="flex flex-col gap-6">
           <div>
-            <h2 className="text-xl font-semibold mb-2 select-none">Location</h2>
-            <p className="text-base opacity-80">
-              Улаанбаатар 13341<br />
-              БЗД, 22-р хороо<br />
-              Мэдээлэл, Холбооны Технологийн Сургууль<br />
-              +976 8824 5988
+            <h2 className="text-xl font-semibold mb-2 select-none">{t('location.location')}</h2>
+            <p className="text-base opacity-80 max-w-[420px]">
+              {t('location.city')}<br />
+              {t('location.address')}<br />
+              {t('location.school')} <br />
+              +976-8824-5988
             </p>
           </div>
         </div>
