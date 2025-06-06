@@ -28,8 +28,8 @@ export const useNavItems = () => {
       label: t('other'),
       anchor: '',
       subItems: [
-        // { label: t('policy'), anchor: '/policy' },
-        { label: t('contact'), anchor: '/contact' }
+        { label: t('contact'), anchor: '/contact' },
+        { label: t('policy'), anchor: '/policy' }
       ]
     }
   ];

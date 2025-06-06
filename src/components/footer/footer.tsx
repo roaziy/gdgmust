@@ -8,6 +8,8 @@ import {
 } from "react-icons/fa";
 import Image from "next/image";
 
+import Link from 'next/link'
+
 // i18n language
 import { useTranslations } from "next-intl";
 
@@ -22,7 +24,7 @@ const Footer = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 px-4 sm:px-6 md:px-0">
         {/* Logo & Contact */}
-        <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
+        <div className="flex -mt-[1px] flex-col gap-4 items-center md:items-start text-center md:text-left">
           <div className="relative w-[220px] md:w-[210px] h-[38px] select-none" draggable="false">
             <Image
               src="/logos/full-white.png"
@@ -54,13 +56,15 @@ const Footer = () => {
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col gap-4 items-center md:items-end w-full">
-          <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-xl px-6 py-3 shadow-lg w-[280px] md:w-[200px]">
+        <div className="flex flex-col gap-4 md:gap-6 items-center md:items-end w-full">
+          <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-full px-6 py-3 shadow-lg w-[280px] md:w-[200px]">
             Contact
           </button>
-          <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-xl px-6 py-3 shadow-lg w-[280px] md:w-[200px]">
-            Policy
-          </button>
+          <Link href="/policy">
+            <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-full px-6 py-3 shadow-lg w-[280px] md:w-[200px] cursor-pointer">
+              {t('policy')}
+            </button>
+          </Link>
         </div>
       </div>
 
