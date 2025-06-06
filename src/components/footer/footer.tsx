@@ -20,49 +20,45 @@ const Footer = () => {
       {/* White decorative topper */}
       <div className="absolute top-0 left-0 w-full h-10 bg-white rounded-b-full z-0" />
 
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
-        {/* Logo and Contact */}
-        <div className="flex flex-col gap-4">
-          <div className="relative w-[220px] h-[30px] select-none" draggable="false">
+      <div className="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 px-4 sm:px-6 md:px-0">
+        {/* Logo & Contact */}
+        <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
+          <div className="relative w-[220px] md:w-[210px] h-[38px] select-none" draggable="false">
             <Image
               src="/logos/full-white.png"
               alt="GDG on Campus MUST Logo"
               fill
-              sizes="(max-width: 768px) 300px, (max-width: 1200px) 330px, 430px"
+              sizes="(max-width: 768px) 580px, (max-width: 1200px) 730px, 530px"
               style={{ objectFit: "contain" }}
               draggable="false"
             />
           </div>
           <div>
-            <h2 className="text-xl font-semibold mb-1 select-none">{t('sayHello')}</h2>
-            <li className="text-[16px]">
-              <a href="mailto:hello@gdgmust.dev" className="hover:underline">hello@gdgmust.dev</a>
-            </li>
-            <li className="text-[16px]">
-              <a href="mailto:gdgmust@gmail.com" className="hover:underline">gdgmust@gmail.com</a>
-            </li>
+            <h2 className="text-xl font-semibold mb-1 mt-6 md:mt-0 select-none">{t('sayHello')}</h2>
+            <ul className="space-y-1 text-[16px]">
+              <li><a href="mailto:hello@gdgmust.dev" className="hover:underline">hello@gdgmust.dev</a></li>
+              <li><a href="mailto:gdgmust@gmail.com" className="hover:underline">gdgmust@gmail.com</a></li>
+            </ul>
           </div>
         </div>
 
-        {/* Address & Interaction */}
-        <div className="flex flex-col gap-6">
-          <div>
-            <h2 className="text-xl font-semibold mb-2 select-none">{t('location.location')}</h2>
-            <p className="text-base opacity-80 max-w-[420px]">
-              {t('location.city')}<br />
-              {t('location.address')}<br />
-              {t('location.school')} <br />
-              +976-8824-5988
-            </p>
-          </div>
+        {/* Location */}
+        <div className="text-center md:text-left flex flex-col justify-center items-center md:items-start">
+          <h2 className="text-xl font-semibold mb-2 select-none">{t('location.location')}</h2>
+          <p className="text-base opacity-80 leading-relaxed w-[300px] md:w-full">
+            {t('location.city')}<br />
+            {t('location.address')}<br />
+            {t('location.school')}<br />
+            +976-8824-5988
+          </p>
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col gap-6">
-          <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-xl px-6 py-3 shadow-lg w-[200px]">
+        <div className="flex flex-col gap-4 items-center md:items-end w-full">
+          <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-xl px-6 py-3 shadow-lg w-[280px] md:w-[200px]">
             Contact
           </button>
-          <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-xl px-6 py-3 shadow-lg w-[200px]">
+          <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-xl px-6 py-3 shadow-lg w-[280px] md:w-[200px]">
             Policy
           </button>
         </div>

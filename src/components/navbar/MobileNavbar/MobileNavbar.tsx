@@ -240,7 +240,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }: MobileNavbarProps) => {
       )}
     </AnimatePresence>
     {/* Navigation bar with menu button */}
-    <nav className="bg-white/95 backdrop-blur-md outline-none outline-1 outline-black/60 flex justify-center items-center outline-offset-0 rounded-full p-4 fixed bottom-[20px] left-1/2 transform -translate-x-1/2 w-[100px] h-[40px] select-none z-50 pointer-events-auto">
+    <nav className="bg-white/95 shadow-[0px_1px_7px] shadow-gray-300/80 backdrop-blur-md flex justify-center items-center rounded-full p-4 fixed bottom-[20px] left-1/2 transform -translate-x-1/2 w-[100px] h-[40px] select-none z-50 pointer-events-auto">
     <button
       onClick={() => setIsMenuOpen(!isMenuOpen)}
       className="px-7 py-5 rounded text-black font-bold"
