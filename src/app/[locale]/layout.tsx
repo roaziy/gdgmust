@@ -53,6 +53,9 @@ import ConsoleMessage from '@/app/ConsoleMessage';
 // Navigation Bar
 import MainNavbar from "@/components/navbar/MainNavbar";
 
+// Scroll to Top Button
+import ScrollToTop from '@/components/utils/ScrollToTop';
+
 // Footer
 import Footer from "@/components/footer/footer";
 
@@ -80,6 +83,9 @@ export default async function LocaleLayout({
       <body className="flex flex-col min-h-screen">
         <NextIntlClientProvider>
           
+          {/* Scroll to top button */}
+          <ScrollToTop />
+
           {/* Main navigation bar */}
           <nav className="z-30 fixed left-0 right-0 pointer-events-none">
             <MainNavbar />

@@ -29,7 +29,7 @@ export const useNavItems = () => {
       anchor: '',
       subItems: [
         { label: t('contact'), anchor: '/contact' },
-        { label: t('policy'), anchor: '/policy' }
+        { label: t('terms'), anchor: '/terms' }
       ]
     }
   ];

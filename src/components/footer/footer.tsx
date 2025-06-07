@@ -60,9 +60,9 @@ const Footer = () => {
           <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-full px-6 py-3 shadow-lg w-[280px] md:w-[200px]">
             Contact
           </button>
-          <Link href="/policy">
+          <Link href="/terms">
             <button className="bg-white text-black bg-opacity-20 backdrop-blur-sm hover:bg-opacity-30 transition rounded-full px-6 py-3 shadow-lg w-[280px] md:w-[200px] cursor-pointer">
-              {t('policy')}
+              {t('terms')}
             </button>
           </Link>
         </div>
