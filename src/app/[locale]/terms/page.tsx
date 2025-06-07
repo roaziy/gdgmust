@@ -4,7 +4,7 @@ export default function Terms() {
   const t = useTranslations('Terms');
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-green-50 pt-24 pb-16 px-4 md:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50/20 via-purple-50/10 to-white pt-24 pb-16 px-4 md:px-8 relative overflow-hidden">
       {/* Animated Background Elements */}
       {/* <div className="absolute inset-0 -z-10">
         <div className="w-96 h-96 bg-gradient-to-r from-emerald-200/30 to-blue-200/30 rounded-full absolute -top-48 -left-48 animate-pulse"></div>
@@ -24,7 +24,7 @@ export default function Terms() {
           </div>
           
           {/* Legal Document Icon */}
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl mb-6 shadow-lg">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl mb-6 shadow-xl">
             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
@@ -47,7 +47,7 @@ export default function Terms() {
         </div>
 
         {/* Welcome Section */}
-        <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 group mb-8">
+        <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/50 hover:shadow-xl transition-all duration-300 group mb-8">
           <div className="flex items-center mb-6">
             <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,7 +65,7 @@ export default function Terms() {
         {/* Content with Enhanced Styling */}
         <div className="space-y-8">
           {/* Use of Our Services */}
-          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 group">
+          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/50 hover:shadow-xl transition-all duration-300 group">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,7 +87,7 @@ export default function Terms() {
           </section>
 
           {/* Event Participation */}
-          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 group">
+          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/50 hover:shadow-xl transition-all duration-300 group">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,7 +109,7 @@ export default function Terms() {
           </section>
 
           {/* Intellectual Property */}
-          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 group">
+          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/50 hover:shadow-xl transition-all duration-300 group">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -138,7 +138,7 @@ export default function Terms() {
               </div>
             </div>
           </section>          {/* Privacy Policy Section */}
-          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 group">
+          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/50 hover:shadow-xl transition-all duration-300 group">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -201,7 +201,7 @@ export default function Terms() {
           </section>
 
           {/* Code of Conduct Section */}
-          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 group">
+          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/50 hover:shadow-xl transition-all duration-300 group">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-rose-500 to-pink-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -288,7 +288,7 @@ export default function Terms() {
           </section>
 
           {/* Changes to Terms */}
-          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 group">
+          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/50 hover:shadow-xl transition-all duration-300 group">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -305,7 +305,7 @@ export default function Terms() {
           </section>
           
           {/* Contact Section */}
-          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 group">
+          <section className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/50 hover:shadow-xl transition-all duration-300 group">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
