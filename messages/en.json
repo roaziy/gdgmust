@@ -57,8 +57,7 @@
         "content1": "Any content or tools used from external sources (e.g., open-source libraries, speaker slides) remain the property of their respective owners.",
         "content2": "We respect and attribute all such content, and you should too when reusing or remixing materials."
       }
-    },
-    "privacySection": {
+    },    "privacySection": {
       "title": "Privacy Policy",
       "intro": "Your privacy is important to us. We only collect essential data and are transparent about its use.",
       "dataCollection": {
@@ -72,47 +71,53 @@
         "item1": "Issue certificates for event participation",
         "item2": "Improve our events and community programs",
         "item3": "Maintain community engagement records and analytics"
+      },
+      "rights": {
+        "title": "Your Rights",
+        "item1": "Access and review your personal data",
+        "item2": "Request correction of inaccurate information",
+        "item3": "Request deletion of your data"
+      },
+      "thirdParty": {
+        "title": "Third-Party Services",
+        "content": "We do not sell your data to third parties. Some event tools may use external platforms with their own privacy policies."
       }
     },
     "codeOfConduct": {
       "title": "Code of Conduct",
       "intro": "GDG on Campus MUST is committed to providing a harassment-free, inclusive community for everyone.",
-      "expectedBehavior": {
+      "expected": {
         "title": "Expected Behavior",
         "item1": "Respect everyone regardless of background, experience level, or identity",
         "item2": "Use welcoming language and provide constructive feedback",
         "item3": "Support beginners and promote collaborative learning",
         "item4": "Show empathy and kindness toward other community members"
       },
-      "unacceptableBehavior": {
+      "prohibited": {
         "title": "Unacceptable Behavior",
         "item1": "Harassment, bullying, or intimidation of any kind",
         "item2": "Discrimination, hate speech, or sexist/racist remarks",
         "item3": "Disruption of talks, events, or community activities",
         "item4": "Sharing of inappropriate content or unsolicited advances"
-      },
-      "reporting": {
-        "title": "Reporting Violations",
-        "content": "If you witness or experience a violation of our code of conduct, please contact our team directly. All reports will be handled with confidentiality and appropriate action will be taken.",
-        "emailLabel": "Report conduct issues:"
       }
     },
     "changes": {
       "title": "Changes to Terms",
-      "content": "We reserve the right to update these terms at any time. Any major changes will be communicated via email or community announcements."
+      "content": "We reserve the right to update these terms at any time. Any major changes will be communicated via email or community announcements.",
+      "notification": {
+        "title": "Notification of Changes",
+        "content": "We will notify users of significant changes through email or community announcements at least 30 days before they take effect."
+      }
     },
     "contact": {
       "title": "Contact Information",
-      "organizationName": "GDG on Campus MUST",
+      "intro": "If you have any questions about these terms, our privacy policy, or our code of conduct, please contact us using the information below.",
       "emailLabel": "Email",
       "email": "gdgmust@gmail.com",
-      "conductEmailLabel": "Alternative Email",
-      "conductEmail": "hello@gdgmust.dev",
       "phoneLabel": "Phone",
       "phone": "+976 8824 5988",
       "addressLabel": "Address",
-      "address": "BZD, 22th khoroo, School of Information and Telecommunication Technology, Ulaanbaatar, 13341, Mongolia",
-      "content": "If you have any questions about these terms, our privacy policy, or our code of conduct, please contact us at the email addresses provided above."
+      "address": "BZD, 22th khoroo, School of Information and Telecommunication Technology, Ulaanbaatar, 13341, Mongolia"
     }
   }
 }
