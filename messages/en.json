@@ -1,4 +1,13 @@
 {
+  "Metadata": {
+    "home": "GDG on Campus MUST",
+    "about": "About",
+    "community": "Community",
+    "events": "Events",
+    "other": "Other",
+    "contact": "Contact",
+    "terms": "Terms of Service"
+  },
   "Navigation": {
     "home": "Home",
     "about": "About",

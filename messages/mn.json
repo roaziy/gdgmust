@@ -1,4 +1,13 @@
 {
+  "Metadata": {
+    "home": "GDG on Campus MUST",
+    "about": "Тухай",
+    "community": "Хамт олон",
+    "events": "Эвентүүд",
+    "other": "Бусад",
+    "contact": "Холбоо барих",
+    "terms": "Үйлчилгээний нөхцөл"
+  },
   "Navigation": {
     "home": "Нүүр",
     "about": "Тухай",

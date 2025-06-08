@@ -1,3 +1,14 @@
+import {getTranslations} from 'next-intl/server';
+
+export async function generateMetadata({params}: {params: Promise<{locale: string}>}) {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'Metadata'});
+ 
+  return {
+    title: t('about')
+  };
+}
+
 export default function AboutPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white">

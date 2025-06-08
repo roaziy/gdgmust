@@ -1,17 +1,20 @@
 import { useTranslations } from 'next-intl';
+import {getTranslations} from 'next-intl/server';
+
+export async function generateMetadata({params}: {params: Promise<{locale: string}>}) {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'Metadata'});
+ 
+  return {
+    title: t('terms')
+  };
+}
 
 export default function Terms() {
   const t = useTranslations('Terms');
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50/20 via-purple-50/10 to-white pt-24 pb-16 px-4 md:px-8 relative overflow-hidden">
-      {/* Animated Background Elements */}
-      {/* <div className="absolute inset-0 -z-10">
-        <div className="w-96 h-96 bg-gradient-to-r from-emerald-200/30 to-blue-200/30 rounded-full absolute -top-48 -left-48 animate-pulse"></div>
-        <div className="w-64 h-64 bg-gradient-to-r from-purple-200/30 to-pink-200/30 rounded-full absolute top-1/2 -right-32 animate-pulse delay-1000"></div>
-        <div className="w-80 h-80 bg-gradient-to-r from-blue-200/30 to-indigo-200/30 rounded-full absolute bottom-0 left-1/3 animate-pulse delay-500"></div>
-      </div> */}
-
       <div className="mt-10 max-w-4xl mx-auto relative z-10">
         {/* Enhanced Header */}
         <div className="text-center mb-20 relative">
