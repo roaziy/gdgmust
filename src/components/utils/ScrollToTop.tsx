@@ -54,7 +54,7 @@ export default function ScrollToTop() {
           }}
           exit={{ 
             opacity: 0, 
-            scale: 0.5,
+            scale: 1,
             transition: { duration: 0.2 }
           }}
           whileHover={{ scale: 1.1 }}

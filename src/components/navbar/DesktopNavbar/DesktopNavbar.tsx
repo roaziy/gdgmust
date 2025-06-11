@@ -150,7 +150,7 @@ export default function Navbar() {
                             {item.subItems.length > 0 && (hovered === index || isSubmenuOpen) && (
                                 <motion.div
                                     id={`submenu-${index}`}
-                                    className="absolute -left-[24px] mt-4 bg-white rounded-2xl shadow-[0px_1px_7px] backdrop-blur-md shadow-gray-300/80 py-1 min-w-[124px] z-50 overflow-hidden select-none"
+                                    className="absolute -left-[26px] mt-4 bg-white rounded-3xl shadow-[0px_1px_7px] backdrop-blur-md shadow-gray-300/80 py-1 min-w-[124px] z-50 overflow-hidden select-none"
                                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                                     animate={{ opacity: 1, y: 0, scale: 1 }}
                                     exit={{ opacity: 0, y: -10, scale: 0.95, transition: { duration: 0.2 } }}
