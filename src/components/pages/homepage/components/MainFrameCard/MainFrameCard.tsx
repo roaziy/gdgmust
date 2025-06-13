@@ -2,13 +2,14 @@
 
 import React, { ReactNode, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-// import Background from '@/components/pages/homepage/components/background';
+import MainBackground from './Background/background';
+import { useTranslations } from 'next-intl';
 
 import "@/styles/globals.css";
 
 const IMG_PADDING = 12;
 
-export const ImageFrameScroller = ({ }) => {
+export const MainFrameCard = () => {
   return (
     <div
       style={{
@@ -44,7 +45,7 @@ const Background = () => {
       ref={targetRef}
       className="sticky z-0 overflow-hidden rounded-3xl"
     >
-      {/* <Background /> */}
+      <MainBackground />
       <motion.div
         className="absolute inset-0 bg-neutral-950/70"
         style={{
@@ -55,12 +56,4 @@ const Background = () => {
   );
 };
 
-export const IntroImageFrameScroller = () => {  
-    return (
-      <div className="bg-white select-none" draggable="false">    
-        <IntroImageFrameScroller />
-      </div>
-    );
-  };
-
-export default IntroImageFrameScroller;
+export default MainFrameCard;
