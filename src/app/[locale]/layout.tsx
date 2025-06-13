@@ -56,6 +56,9 @@ import MainNavbar from "@/components/navbar/MainNavbar";
 // Scroll to Top Button
 import ScrollToTop from '@/components/utils/ScrollToTop';
 
+// Smooth Scroll
+import SmoothScroll from '@/components/utils/SmoothScroll';
+
 // Footer
 import Footer from "@/components/footer/footer";
 
@@ -79,10 +82,13 @@ export default async function LocaleLayout({
   }
  
   return (
-    <html lang={locale} className={`${googleSans.variable} ${manrope.variable}`}>
+    <html lang={locale} className={`${googleSans.variable} ${manrope.variable}`}>      
       <body className="flex flex-col min-h-screen">
         <NextIntlClientProvider>
           
+          {/* Smooth scroll */}
+          <SmoothScroll />
+
           {/* Scroll to top button */}
           <ScrollToTop />
 
