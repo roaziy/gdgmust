@@ -87,7 +87,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           
           {/* Smooth scroll */}
-          <SmoothScroll />
+          {/* <SmoothScroll /> */}
 
           {/* Scroll to top button */}
           <ScrollToTop />
