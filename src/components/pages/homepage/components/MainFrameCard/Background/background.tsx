@@ -71,12 +71,12 @@ const MemoizedCircularText = memo(CircularText);
         {/* Main content */}
         {/* Logo */}
         <div className='absolute top-0 left-0 w-full h-full flex items-center justify-center'>
-            <Logo />
+            {/* <Logo /> */}
         </div>
 
         {/* title */}
-        <div className="absolute -left-[17px] md:left-[69px] bottom-[76px] md:bottom-4 -rotate-90 md:rotate-0">
-            <h2 className={`${tiny5.className} text-[105px] md:text-[120px] text-black/80 select-none`}>GDG</h2>
+        <div className="absolute -left-[7px] md:left-[69px] bottom-[90px] md:bottom-4 -rotate-90 md:rotate-0">
+            <h2 className={`${tiny5.className} text-[80px] md:text-[120px] text-black/80 select-none`}>GDG</h2>
         </div>
 
         {/* topper text */}
@@ -92,7 +92,7 @@ const MemoizedCircularText = memo(CircularText);
         </div>
 
         {/* right side block */}
-        <div className="absolute right-[55px] md:right-[55px] bottom-[74px] md:bottom-[54px] bg-white/40 w-[160px] h-[190px] rounded-[25px] shadow-[2px_20px_20px]/20 backdrop-blur-xl shadow-black z-30">
+        <div className="absolute right-[35px] md:right-[55px] bottom-[70px] md:bottom-[54px] bg-white/40 w-[148px] md:w-[160px] h-[148px] md:h-[190px] rounded-[25px] shadow-[2px_20px_20px]/20 backdrop-blur-xl shadow-black z-30">
             <div 
                 className='w-full mt-5 flex justify-center items-center cursor-pointer relative z-10'
                 onClick={() => {
@@ -135,7 +135,7 @@ const MemoizedCircularText = memo(CircularText);
                     className="custom-class pointer-events-none"
                 />
             </div>
-            <p className={`flex justify-center items-center text-[45px] mt-2 ${libreBarcode128.className}`}>roaziy</p>
+            <p className={`flex justify-center items-center text-[45px] mt-2 invisible md:visible ${libreBarcode128.className}`}>roaziy</p>
         </div>
     </div>
   );
