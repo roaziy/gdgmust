@@ -1,11 +1,8 @@
 'use client';
 
-import React, { ReactNode, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import MainBackground from './Background/background';
-import { useTranslations } from 'next-intl';
-
-import "@/styles/globals.css";
 
 const IMG_PADDING = 12;
 
