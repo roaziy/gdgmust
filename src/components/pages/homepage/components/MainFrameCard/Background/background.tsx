@@ -135,7 +135,7 @@ const MemoizedCircularText = memo(CircularText);
                     className="custom-class pointer-events-none"
                 />
             </div>
-            <p className={`flex justify-center items-center text-[45px] mt-2 invisible md:visible ${libreBarcode128.className}`}>roaziy</p>
+            <p className={`flex justify-center items-center text-[45px] select-none mt-2 invisible md:visible ${libreBarcode128.className}`} draggable="false">roaziy</p>
         </div>
     </div>
   );
