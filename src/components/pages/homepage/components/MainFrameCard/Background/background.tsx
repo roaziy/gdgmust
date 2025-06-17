@@ -92,7 +92,7 @@ const MemoizedCircularText = memo(CircularText);
         </div>
 
         {/* right side block */}
-        <div className="absolute right-[35px] md:right-[55px] bottom-[70px] md:bottom-[54px] bg-white/40 w-[148px] md:w-[160px] h-[148px] md:h-[190px] rounded-[25px] shadow-[2px_20px_20px]/20 backdrop-blur-xl shadow-black z-30">
+        <div className="absolute right-[35px] md:right-[55px] bottom-[70px] md:bottom-[54px] select-none bg-white/40 w-[148px] md:w-[160px] h-[148px] md:h-[190px] rounded-[25px] shadow-[2px_20px_20px]/20 backdrop-blur-xl shadow-black z-30">
             <div 
                 className='w-full mt-5 flex justify-center items-center cursor-pointer relative z-10'
                 onClick={() => {
@@ -132,7 +132,7 @@ const MemoizedCircularText = memo(CircularText);
                     text="SCROLL*DOWN*SCROLL"
                     onHover="speedUp"
                     spinDuration={25}
-                    className="custom-class pointer-events-none"
+                    className="custom-class select-none pointer-events-none"
                 />
             </div>
             <p className={`flex justify-center items-center text-[45px] select-none mt-2 invisible md:visible ${libreBarcode128.className}`} draggable="false">roaziy</p>
